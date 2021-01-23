@@ -54,7 +54,7 @@
                 name="name"
                 v-model="name"
                 :disabled="sending"
-                class="form-control custom-form-input"
+                class="form-control"
                 id="name"
                 autocomplete
                 minlength="3"
@@ -71,7 +71,7 @@
                 name="email"
                 v-model="email"
                 :disabled="sending"
-                class="form-control custom-form-input"
+                class="form-control"
                 id="email"
                 :placeholder="$t('contact.form.palaceholder.email')"
                 required
@@ -87,7 +87,7 @@
                 name="subject"
                 v-model="subject"
                 :disabled="sending"
-                class="form-control custom-form-input"
+                class="form-control"
                 id="subject"
                 :placeholder="$t('contact.form.palaceholder.subject')"
                 required
@@ -99,7 +99,7 @@
                 {{ $t('contact.form.message') }}
               </label>
               <textarea
-                class="form-control custom-form-input"
+                class="form-control"
                 minlength="3"
                 :placeholder="$t('contact.form.palaceholder.message')"
                 v-model="message"
@@ -111,17 +111,13 @@
                 autocomplete="off"
               ></textarea>
             </div>
-
-            <vue-recaptcha
+            <recaptcha
               class="recaptcha"
-              theme="dark"
-              :language="$i18n.locale"
-              :loadRecaptchaScript="true"
-              @verify="onCaptchaVerified"
+              data-theme="dark"
+              @error="onCaptchaExpired"
+              @success="onCaptchaVerified"
               @expired="onCaptchaExpired"
-              ref="recaptcha"
-              sitekey="6Leh6dkUAAAAAL2KFiSuCtfHHCB4ksMSd5nwms6P"
-            ></vue-recaptcha>
+            />
             <CircularProgress
               v-if="sending"
               :content="$t('contact.form.sending')"
@@ -145,7 +141,6 @@
 import SvgIcon from '@/components/SvgPathIcon'
 import CircularProgress from '@/components/CircularProgress'
 import Alert from '@/components/Alert'
-import VueRecaptcha from 'vue-recaptcha'
 import MyFooter from '@/components/MyFooter'
 export default {
   name: 'contact',
@@ -153,7 +148,6 @@ export default {
     SvgIcon,
     CircularProgress,
     Alert,
-    VueRecaptcha,
     MyFooter,
   },
   data() {
@@ -212,9 +206,9 @@ export default {
     onCaptchaVerified(response) {
       this.recapToken = response
     },
-    onCaptchaExpired() {
+    async onCaptchaExpired() {
       var recaptcha = this.$refs.recaptcha
-      recaptcha.reset()
+      await recaptcha.reset()
       this.recapToken = null
     },
 
@@ -405,9 +399,7 @@ textarea:focus {
   outline-color: var(--primary-bg-color);
 }
 
-input[type='text'],
-input[type='email'],
-textarea {
+.form-control {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;

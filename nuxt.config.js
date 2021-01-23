@@ -41,6 +41,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/recaptcha',
     '@nuxtjs/style-resources',
     'nuxt-i18n',
     '@nuxtjs/sitemap',
@@ -120,6 +121,14 @@ export default {
       priority: 1,
       lastmod: new Date(),
     },
+  },
+
+  recaptcha: {
+    hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
+    language: 'en', // Recaptcha language (v2)
+    siteKey: '6Leh6dkUAAAAAL2KFiSuCtfHHCB4ksMSd5nwms6P', // Site key for requests
+    version: 2, // Version
+    size: 'normal', // Size: 'compact', 'normal', 'invisible' (v2)
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
