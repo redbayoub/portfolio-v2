@@ -21,7 +21,7 @@
           />
         </transition-group>
         <a
-          v-if="!loadingMore && projects.length < all_projects.length"
+          v-if="!loadingMore && projects.length < allProjects.length"
           name
           id
           class="btn btn-primary load-more"
@@ -50,13 +50,9 @@ export default {
     ProjectListItem,
   },
   props: ['allProjects'],
-  computed: {
-    all_projects: function () {
-      return this.allProjects
-    },
-  },
-  created() {
-    this.projects = this.all_projects.slice(0, this.projectsPerPage)
+  async mounted() {
+    await this.$nextTick()
+    this.projects = this.allProjects.slice(0, this.projectsPerPage)
   },
   data() {
     return {
@@ -85,7 +81,7 @@ export default {
       const increaseBy = this.projectsPerPage
       this.loadingMore = true
       this.projects.push(
-        ...this.all_projects.slice(
+        ...this.allProjects.slice(
           this.projects.length,
           this.projects.length + increaseBy
         )
