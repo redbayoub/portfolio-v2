@@ -13,17 +13,17 @@
 
       <h3 class="page-title">Projects</h3>
 
-      <transition-group name="list" tag="div" class="projects-list">
+      <div ref="projectsList">
         <ProjectListItem
           v-for="project in all_projects"
           :key="project.slug"
           :project="project"
           @imageClicked="onImageClicked(project)"
         />
-      </transition-group>
+      </div>
 
       <a
-        v-if="!loadingMore && projects.length < all_projects.length"
+        v-if="displayedProjects < all_projects.length"
         name
         id
         class="btn btn-primary load-more"
@@ -60,7 +60,6 @@ export default {
     const projectsPerPage = 10
     return {
       all_projects,
-      projects: all_projects.slice(0, projectsPerPage),
     }
   },
   components: {
@@ -70,27 +69,36 @@ export default {
   },
   data() {
     return {
-      loadingMore: false,
       projectsPerPage: 10,
       all_projects: [],
-      projects: [],
+      displayedProjects: 10,
       showImageModal: false,
       imgs: [],
     }
   },
+  mounted() {
+    const self = this
+    this.$refs.projectsList.children.forEach((child, index) => {
+      if (index < self.projectsPerPage) {
+        child.classList.remove('hidden')
+      } else {
+        child.classList.add('hidden')
+      }
+    })
+  },
   methods: {
     toggleScroll,
     async loadMore() {
-      const increaseBy = this.projectsPerPage
-      this.loadingMore = true
-      this.projects.push(
-        ...this.all_projects.slice(
-          this.projects.length,
-          this.projects.length + increaseBy
-        )
-      )
+      const self = this
+      this.displayedProjects += this.projectsPerPage
       await this.$nextTick()
-      this.loadingMore = false
+      this.$refs.projectsList.children.forEach((child, index) => {
+        if (index < self.displayedProjects) {
+          child.classList.remove('hidden')
+        } else {
+          child.classList.add('hidden')
+        }
+      })
     },
     async onImageClicked(project) {
       this.imgs = project.thumbnail_img
@@ -132,7 +140,8 @@ export default {
     }
   }
   .page-content {
-    padding: 1.5em 0;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
   }
 }
 

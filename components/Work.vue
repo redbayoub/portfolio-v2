@@ -12,20 +12,22 @@
       </client-only>
 
       <div class="section-content">
-        <transition-group name="list" tag="div">
+        <div ref="projectsList">
           <ProjectListItem
-            v-for="project in projects"
+            class="item"
+            v-for="project in allProjects"
             :key="project.slug"
             :project="project"
             @imageClicked="onImageClicked(project)"
           />
-        </transition-group>
+        </div>
+
         <a
-          v-if="!loadingMore && projects.length < allProjects.length"
+          v-if="displayedProjects < allProjects.length"
           name
           id
           class="btn btn-primary load-more"
-          href="#work"
+          href="#"
           role="button"
           @click.prevent="loadMore()"
           >{{ $t('work.cta.show_more') }}</a
@@ -50,15 +52,20 @@ export default {
     ProjectListItem,
   },
   props: ['allProjects'],
-  async mounted() {
-    await this.$nextTick()
-    this.projects = this.allProjects.slice(0, this.projectsPerPage)
+  mounted() {
+    const self = this
+    this.$refs.projectsList.children.forEach((child, index) => {
+      if (index < self.projectsPerPage) {
+        child.classList.remove('hidden')
+      } else {
+        child.classList.add('hidden')
+      }
+    })
   },
   data() {
     return {
-      loadingMore: false,
       projectsPerPage: 2,
-      projects: [],
+      displayedProjects: 2,
       showImageModal: false,
       imgs: [],
     }
@@ -78,16 +85,16 @@ export default {
       )
     },
     async loadMore() {
-      const increaseBy = this.projectsPerPage
-      this.loadingMore = true
-      this.projects.push(
-        ...this.allProjects.slice(
-          this.projects.length,
-          this.projects.length + increaseBy
-        )
-      )
+      const self = this
+      this.displayedProjects += this.projectsPerPage
       await this.$nextTick()
-      this.loadingMore = false
+      this.$refs.projectsList.children.forEach((child, index) => {
+        if (index < self.displayedProjects) {
+          child.classList.remove('hidden')
+        } else {
+          child.classList.add('hidden')
+        }
+      })
     },
     async onImageClicked(project) {
       this.imgs = project.thumbnail_img
@@ -104,14 +111,15 @@ export default {
 </script>
 
 <style lang="scss">
-.list-enter-active,
-.list-leave-active {
-  transition: all 1s;
-}
-.list-enter,
-.list-leave-to {
+.hidden {
   opacity: 0;
+  height: 0;
+  margin: 0;
   transform: translateY(-30px);
+}
+
+.item {
+  transition: all 1s;
 }
 
 html[lang='ar'] .work {
