@@ -1,0 +1,42 @@
+{
+  "custom_title": {
+    "en": "Feras Salon App",
+    "ar": "تطبيق صالون فراس"
+  },
+  "custom_description": {
+    "en": "This app allows the customers to book appointments from their home and manage their appointments from the app, also the manager of the salon has a specific app that allow him to manage all appointments and manage the entire system and he is also able to send push notifications to the customers. the app is available in App Store and Google Play",
+    "ar": "هذا التطبيق يمّكن العملاء من حجز مواعيدهم في الصالون من منزلهم وأيضا يمكنهم من إدارة مواعيدهم في التطبيق، مدير الصالون لديه تطبيق خاص حيث يسمح له بادارة مواعيد العملاء ويمّكنه من إرسال إشعارات إلى العملاء. التطبيق متوفر على غوغل بلاي و أب ستور"
+  },
+  "summery": {
+    "en": "This app allows you to book your salon appointment at your desirable time slot in any available day with ease, you can also manage all your salon appointments from one place.",
+    "ar": "هذا التطبيق يمّكنك من حجز مواعيدك في الصالون في الوقت الناسب لك وبسهولة ويمّكنك أيضا من إدارة جميع مواعيدك"
+  },
+  "role": {
+    "en": "I developed the backend using Laravel and developed the customer app and the manager app using Flutter in collaboration with a UI/UX designer",
+    "ar": "لقد قمت ببرمجة الباكاند باستخدام Laravel وتمت برمجة التطبيق باستخدام Flutter اما التصميم فكان بالتعاون مع مصمم"
+  },
+  "primary_color": "#515BF5",
+  "btnClass": "btn-feras-salon",
+  "links": {
+    "source_code": null,
+    "page": "https://feras.devbuds.com"
+  },
+  "stacks": ["Flutter", "Laravel"],
+  "thumbnail_img": "/images/projects/feras-salon/thumbnail.jpg",
+  "hero_img": "/images/projects/feras-salon/hero.png",
+  "screenshots": [
+    "/images/projects/feras-salon/screenshots/1.png",
+    "/images/projects/feras-salon/screenshots/2.png",
+    "/images/projects/feras-salon/screenshots/3.png",
+    "/images/projects/feras-salon/screenshots/4.png",
+    "/images/projects/feras-salon/screenshots/5.png",
+    "/images/projects/feras-salon/screenshots/6.png",
+    "/images/projects/feras-salon/screenshots/7.png",
+    "/images/projects/feras-salon/screenshots/8.png",
+    "/images/projects/feras-salon/screenshots/9.png",
+    "/images/projects/feras-salon/screenshots/10.png",
+    "/images/projects/feras-salon/screenshots/11.png",
+    "/images/projects/feras-salon/screenshots/12.png"
+  ],
+  "order": 9
+}

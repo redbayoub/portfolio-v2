@@ -1,0 +1,34 @@
+{
+  "custom_title": {
+    "en": "Otlob Tawa App",
+    "ar": "تطبيق أطلب توا"
+  },
+  "custom_description": {
+    "en": "This app allows the users to order anything from the admin through a form he can edit which is displayed in a web view",
+    "ar": "هذا التطبيق يمَكن المستخدمين من وضع طلبات للأدمن من خلال فورم يتم عرضها على ويب فيو"
+  },
+  "summery": {
+    "en": "This app allows the users to order anything from the admin through a form he can edit which is displayed in a web view",
+    "ar": "هذا التطبيق يمَكن المستخدمين من وضع طلبات للأدمن من خلال فورم يتم عرضها على ويب فيو"
+  },
+  "role": {
+    "en": "I developed the app using Flutter in collaboration with a UI/UX Designer",
+    "ar": "لقد قمت ببرمجة التطبيق ب Flutter بالشراكة مع مصمم"
+  },
+  "primary_color": "#6A6BE1",
+  "btnClass": "btn-otlob-tawa",
+  "links": {
+    "source_code": null,
+    "page": "https://play.google.com/store/apps/details?id=com.libyataza.otlob_tawa_client"
+  },
+  "stacks": ["Flutter", "Firebase"],
+  "thumbnail_img": "/images/projects/otlob-tawa/thumbnail.jpg",
+  "hero_img": "/images/projects/otlob-tawa/hero.png",
+  "screenshots": [
+    "/images/projects/otlob-tawa/screenshots/1.png",
+    "/images/projects/otlob-tawa/screenshots/2.png",
+    "/images/projects/otlob-tawa/screenshots/3.png",
+    "/images/projects/otlob-tawa/screenshots/4.png"
+  ],
+  "order": 5
+}

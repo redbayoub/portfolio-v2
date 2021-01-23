@@ -1,0 +1,33 @@
+{
+  "custom_title": {
+    "en": "Simple Text editor",
+    "ar": "محرر نصوص بسيط"
+  },
+  "custom_description": {
+    "en": "This desktop program that allow the users to read, write text files",
+    "ar": "يمَكن البرنامج المستخدمين من قراءة وكتابة الملفات النصية"
+  },
+  "summery": {
+    "en": "A simple text editor that allow the users to read, write text files",
+    "ar": "محرر نصورص بسيط يم1كن المستخدمين من قراء وكتابة الملفات النصية"
+  },
+  "role": {
+    "en": "I designed and developed the app using Java & JavaFX",
+    "ar": "لقت قمت بتصميم وبرمجة التطبيق باستخدام JavaFX و Java"
+  },
+  "primary_color": "#4444FE",
+  "btnClass": "btn-text-editor",
+  "links": {
+    "source_code": "https://github.com/redayoub47/javafx_text_editor",
+    "page": null
+  },
+  "stacks": ["JavaFX", "Java"],
+  "thumbnail_img": "/images/projects/text-editor/thumbnail.jpg",
+  "hero_img": "/images/projects/text-editor/hero.png",
+  "screenshots": [
+    "/images/projects/text-editor/screenshots/1.png",
+    "/images/projects/text-editor/screenshots/2.png",
+    "/images/projects/text-editor/screenshots/3.png"
+  ],
+  "order": 2
+}

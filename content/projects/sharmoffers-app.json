@@ -1,0 +1,38 @@
+{
+  "custom_title": {
+    "en": "Sharmoffers App",
+    "ar": "Sharmoffers تطبيق"
+  },
+  "custom_description": {
+    "en": "this app allows the customers to order grocery or medicines or make a special order then send the url to the delivery agent of their choice using WhatsApp while the delivery agent can see the of details of the order in Sharmoffers app by clicking the shared url, the app shows a map for the client to set their address",
+    "ar": "هذا التطبيق يمَكن العملاء من طلب المواد الغذائية او الأدوية او عمل طلب خاص وبعد عمل أي طلب يمكنهم مشاركة رابطه مع مندوب التوصيل من خلال واتساب حيث يمكن للمندوب عرض تفاصيل الطلب في التطبيق عند الضغط على الرابط. التطبيق يوفر إمكانية تحديد موقع الطلبية من خلال الخرائط"
+  },
+  "summery": {
+    "en": "This app allows the customers to order grocery or medicines or make a special order then send a url to the delivery person of their choice using WhatsApp where they can see the of details of the order in Sharmoffers app by clicking the shared url",
+    "ar": "هذا التطبيق يمَكن العملاء من طلب المواد الغذائية او الأدوية او عمل طلب خاص وبعد عمل أي طلب يمكنهم مشاركة رابطه مع مندوب التوصيل من خلال واتساب حيث يمكن للمندوب عرض تفاصيل الطلب في التطبيق عند الضغط على الرابط."
+  },
+  "role": {
+    "en": "I designed and developed the users app using Flutter and also I developed a dashboard to mange the users, products, delivery agents using VueJs and Firebase",
+    "ar": "لقد قمت بتصميم كل شيء وقمت باستخدام Firebase للباكاند و VueJs للوحة التحكم وأما التطبيق فقد قمت ببرمجته ب Flutter"
+  },
+  "primary_color": "#FFC107",
+  "btnClass": "btn-sharmoffers",
+  "links": {
+    "source_code": null,
+    "page": null
+  },
+  "stacks": ["Flutter", "Firebase", "VueJs"],
+  "thumbnail_img": "/images/projects/sharmoffers/thumbnail.jpg",
+  "hero_img": "/images/projects/sharmoffers/hero.png",
+  "screenshots": [
+    "/images/projects/sharmoffers/screenshots/1.png",
+    "/images/projects/sharmoffers/screenshots/2.png",
+    "/images/projects/sharmoffers/screenshots/3.png",
+    "/images/projects/sharmoffers/screenshots/4.png",
+    "/images/projects/sharmoffers/screenshots/5.png",
+    "/images/projects/sharmoffers/screenshots/6.png",
+    "/images/projects/sharmoffers/screenshots/7.png",
+    "/images/projects/sharmoffers/screenshots/8.png"
+  ],
+  "order": 8
+}

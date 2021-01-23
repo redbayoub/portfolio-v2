@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* use defult styling for ol, ul, li */
+
+ul,
+ol {
+  display: block;
+  list-style: disc outside none;
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+ol {
+  list-style-type: decimal;
+}
+li {
+  display: list-item;
+}
+ul ul,
+ol ul {
+  list-style-type: circle;
+  margin-left: 15px;
+}
+ol ol,
+ul ol {
+  list-style-type: lower-latin;
+  margin-left: 15px;
+}
+
+[lang="ar"] ul,
+[lang="ar"] ol {
+  padding: 0 40px 0 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+svg {
+  pointer-events: none;
+}

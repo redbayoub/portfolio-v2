@@ -1,0 +1,44 @@
+{
+  "custom_title": {
+    "en": "Online Education App",
+    "ar": "تطبيق الدراسة أونلاين"
+  },
+  "custom_description": {
+    "en": "This app allows teachers that are registered from the dashboard in the app to make live streams to their students and also share Images, Video, Books and create exams for their students",
+    "ar": "هذا التطبيق يمَكن الأساتدة المسجلين من خلال لوحة التحكم من عمل بث مباشر لطلبتهم وايضا يمكنهم مشاركة صور، فيديوهات، كتب ويمكنهم أيضا وضع إختبارات للطلبتهم"
+  },
+  "summery": {
+    "en": "This app allows teachers that are registered from the dashboard in the app to make live streams to their students and also share Images, Video, Books and create exams for their students",
+    "ar": "هذا التطبيق يمَكن الأساتدة المسجلين من خلال لوحة التحكم من عمل بث مباشر لطلبتهم وايضا يمكنهم مشاركة صور، فيديوهات، كتب ويمكنهم أيضا وضع إختبارات للطلبتهم"
+  },
+  "role": {
+    "en": "I developed the users app using Flutter in collaboration with UI/UX Designer and also I developed a dashboard to mange the students, teachers and their files using VueJs and Laravel",
+    "ar": "لقد قمت ببرمجة التطبيق باستخدام Flutter بشراكة مع مصمم، أما الباكند فقمت ببرمجته باستخدام Laravel واما لوحة التحكم فهي مبرمجة ب VueJs"
+  },
+  "primary_color": "#6687FF",
+  "btnClass": "btn-edu-online",
+  "links": {
+    "source_code": null,
+    "page": null
+  },
+  "stacks": ["Flutter", "Laravel", "VueJs"],
+  "thumbnail_img": "/images/projects/edu-online/thumbnail.jpg",
+  "hero_img": "/images/projects/edu-online/hero.png",
+  "screenshots": [
+    "/images/projects/edu-online/screenshots/1.png",
+    "/images/projects/edu-online/screenshots/2.png",
+    "/images/projects/edu-online/screenshots/3.png",
+    "/images/projects/edu-online/screenshots/4.png",
+    "/images/projects/edu-online/screenshots/5.png",
+    "/images/projects/edu-online/screenshots/6.png",
+    "/images/projects/edu-online/screenshots/7.png",
+    "/images/projects/edu-online/screenshots/8.png",
+    "/images/projects/edu-online/screenshots/9.png",
+    "/images/projects/edu-online/screenshots/10.png",
+    "/images/projects/edu-online/screenshots/11.png",
+    "/images/projects/edu-online/screenshots/12.png",
+    "/images/projects/edu-online/screenshots/13.png",
+    "/images/projects/edu-online/screenshots/14.png"
+  ],
+  "order": 7
+}

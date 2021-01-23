@@ -1,0 +1,130 @@
+@import './_variables.scss';
+@import './_reset.scss';
+
+body {
+  font-family: Montserrat, Arial, sans-serif;
+}
+
+html[lang='ar'] body {
+  font-family: Tajawal, Helvetica, Arial, sans-serif;
+}
+
+:root {
+  --primary-bg-color: #ffd42a;
+  --primary-light-bg-color: #fffae6;
+  --primary-hover-bg-color: #ffc800;
+  --nav-bar-height: 50px;
+
+  /* navbar color */
+  --nav-bar-bg-color: rgba(255, 255, 255, 0.7);
+  /* navbar color whene open in mobile */
+  --nav-bar-active-bg-color: var(--nav-links-bg-color);
+  /*  navbar links list color whene open in mobile */
+  --nav-links-bg-color: #fff8da;
+
+  --btn-raduis: 8px;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: $md-brakepoint) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: $lg-brakepoint) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: $xl-brakepoint) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* chip componenet */
+
+.chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 0.8fr));
+  grid-gap: 5px;
+}
+
+@import './_buttons.scss';
+
+/* utility classes */
+@import './_utils.scss';
+
+/* Genral styling */
+
+section {
+  padding: 2em 0;
+}
+
+.section-content {
+  padding: 1em 0 0;
+  line-height: 1.5em;
+}
+
+.section-title {
+  text-transform: capitalize;
+  font-size: 1.7rem;
+}
+
+.bg-primary-light {
+  background-color: var(--primary-light-bg-color);
+}
+
+/* Hero Styling */
+html[lang='ar'] .hero {
+  direction: rtl;
+}
+
+.hero-header {
+  font-size: 2.5em;
+}
+.hero-subtitle {
+  margin: 2em auto;
+  line-height: 1.5em;
+}
+.hero-actions :last-child {
+  margin-top: 10px;
+}
+.hero-text {
+  margin: auto 0;
+  padding: 2em 0 0;
+}
+.hero-image {
+  text-align: center;
+  padding: 2em 0;
+}
+
+@media screen and (min-width: 357px) {
+  .hero-actions :last-child {
+    margin-left: 1em;
+  }
+  html[lang='ar'] .hero-actions :last-child {
+    margin-left: 0;
+    margin-right: 1em;
+  }
+}
+@media screen and (min-width: $md-brakepoint) {
+  .hero {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hero-text {
+    padding: 0;
+  }
+
+  .hero-actions :last-child {
+    margin-top: 0px;
+  }
+}

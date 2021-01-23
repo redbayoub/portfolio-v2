@@ -1,0 +1,34 @@
+{
+  "todo": "  //TODO: add images",
+  "custom_title": {
+    "en": "Personal Website v2",
+    "ar": "موقعى الشخصي النسخة الثانية"
+  },
+  "custom_description": {
+    "en": "The second version of my personal website with improved design and UX and faster response time",
+    "ar": "النسخة الثانية لموقعي الشخصي حيث تم تطويره وتحسين التصميم وتجربة المستخدم"
+  },
+  "summery": {
+    "en": "The second version of my personal website with improved design and UX and faster response time",
+    "ar": "النسخة الثانية لموقعي الشخصي حيث تم تطويره وتحسين التصميم وتجربة المستخدم"
+  },
+  "role": {
+    "en": "I designed and developed the website from scratch using VueJs without any design framework",
+    "ar": "لقد قمت ببرمجة الموقع باستخدام VueJs وبدون إستخدام أي فريمورك للتصميم"
+  },
+  "primary_color": "#ffd42a",
+  "btnClass": null,
+  "links": {
+    "source_code": "",
+    "page": "https://www.redbayoub.com"
+  },
+  "stacks": ["NuxtJs", "VueJs", "SCSS", "JavaScript"],
+  "thumbnail_img": "/images/projects/personal-portfolio/v2/thumbnail.jpg",
+  "hero_img": "/images/projects/personal-portfolio/v2/hero.png",
+  "screenshots": [
+    "/images/projects/personal-portfolio/v2/screenshots/1.png",
+    "/images/projects/personal-portfolio/v2/screenshots/2.png",
+    "/images/projects/personal-portfolio/v2/screenshots/3.png"
+  ],
+  "order": 6
+}

@@ -1,0 +1,29 @@
+{
+  "custom_title": {
+    "en": "Simple Media Player",
+    "ar": "قارئ الوسائط بسيط"
+  },
+  "custom_description": {
+    "en": "This desktop program allows the users to open media files and supports all the extension that are  officially supported in Java 8 ( mp4 , mp3 , wav , ...)",
+    "ar": "يمَكن هذا البرنامج المستخدمين من فتح ملفات الصوت والفيديوهات ويدعم الصيغ المدعومة رسميا في الجافا منها mp4 , mp3 , wav"
+  },
+  "summery": {
+    "en": "This desktop program allows the users to open media files and supports all the extension that are  officially supported in Java 8 ( mp4 , mp3 , wav , ...)",
+    "ar": "يمَكن هذا البرنامج المستخدمين من فتح ملفات الصوت والفيديوهات ويدعم الصيغ المدعومة رسميا في الجافا منها mp4 , mp3 , wav"
+  },
+  "role": {
+    "en": "I designed and developed the program using Java & JavaFX",
+    "ar": "لقت قمت بتصميم وبرمجة التطبيق باستخدام JavaFX و Java"
+  },
+  "primary_color": "#0D9756",
+  "btnClass": "btn-media-player",
+  "links": {
+    "source_code": "https://github.com/redayoub47/javafx_media_player",
+    "page": null
+  },
+  "stacks": ["JavaFX", "Java"],
+  "thumbnail_img": "/images/projects/media-player/thumbnail.jpg",
+  "hero_img": "/images/projects/media-player/hero.png",
+  "screenshots": ["/images/projects/media-player/screenshots/1.png"],
+  "order": 1
+}

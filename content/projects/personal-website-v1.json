@@ -1,0 +1,32 @@
+{
+  "custom_title": {
+    "en": "Personal Website v1",
+    "ar": "موقعى الشخصي النسخة الأولى"
+  },
+  "custom_description": {
+    "en": "The first version of my personal website that show my projects, skills and allows the users to reach me",
+    "ar": "النسخة الأولى لموقعي الشخصي والتي تعرض مشاريعي ومهاراتي وأيضا تمكن المستخدمين من التواصل معي"
+  },
+  "summery": {
+    "en": "The first version of my personal website that show my projects, skills and allows the users to reach me",
+    "ar": "النسخة الأولى لموقعي الشخصي والتي تعرض مشاريعي ومهاراتي وأيضا تمكن المستخدمين من التواصل معي"
+  },
+  "role": {
+    "en": "I designed and developed the website using VueJs and Bootstrap",
+    "ar": "لقد قمت بتصميم وبرمجة الموقع ب VueJs مع استخدام ر"
+  },
+  "primary_color": "#0F4C81",
+  "btnClass": "btn-portfolio-v1",
+  "links": {
+    "source_code": "",
+    "page": "https://v1.redbayoub.com"
+  },
+  "stacks": ["VueJs", "Bootstrap", "JavaScript"],
+  "thumbnail_img": "/images/projects/personal-portfolio/v1/thumbnail.jpg",
+  "hero_img": "/images/projects/personal-portfolio/v1/hero.png",
+  "screenshots": [
+    "/images/projects/personal-portfolio/v1/screenshots/1.png",
+    "/images/projects/personal-portfolio/v1/screenshots/2.png"
+  ],
+  "order": 4
+}

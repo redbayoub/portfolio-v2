@@ -1,0 +1,34 @@
+{
+  "custom_title": {
+    "en": "Gas Libya App",
+    "ar": "تطبيق غاز ليبيا"
+  },
+  "custom_description": {
+    "en": "This app allows the users to order gas containers from their home, the order gets received by the admin in his own app which after that he send the order to a delivery agent through WhatsApp",
+    "ar": "هذا التطبيق يمَكن المستخدمين من طلب قوارير الغاز من منزلهم، الطلبية يتم إستقبالها من طرف الادمن في تطبيق خاص حيث يستطيع بعد ذلك إرسالها الى مندوب التوصيل عبر الواتساب"
+  },
+  "summery": {
+    "en": "This app allows the users to order gas containers from their home",
+    "ar": "هذا التطبيق يمَكن المستخدمين من طلب قوارير الغاز من منزلهم"
+  },
+  "role": {
+    "en": "I designed and developed the app and the manager app using Flutter and also I developed a dashboard to manage the prices of gas containers and send push notifications to the users",
+    "ar": "لقد قمت بتصميم وبرمجة التطبيق باستخدام Flutter اما لوحة التحكم فتم برمجتها باستخدام VueJs حيث تمَكن الأدمن من تحديد ثمن القارورات وأيضا إرسال إشعارات إلى العملاء"
+  },
+  "primary_color": "#2196f3",
+  "btnClass": "btn-gas-libya",
+  "links": {
+    "source_code": null,
+    "page": "https://www.facebook.com/gaslibya"
+  },
+  "stacks": ["Flutter", "Firebase", "VueJs"],
+  "thumbnail_img": "/images/projects/gaz-libya/thumbnail.jpg",
+  "hero_img": "/images/projects/gaz-libya/hero.png",
+  "screenshots": [
+    "/images/projects/gaz-libya/screenshots/1.png",
+    "/images/projects/gaz-libya/screenshots/2.png",
+    "/images/projects/gaz-libya/screenshots/3.png",
+    "/images/projects/gaz-libya/screenshots/4.png"
+  ],
+  "order": 3
+}

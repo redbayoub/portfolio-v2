@@ -1,0 +1,123 @@
+<template>
+  <div class="project-details-wrapper">
+    <img
+      :src="project.thumbnail_img"
+      class="project-image"
+      :alt="project.custom_title.en + ' image'"
+      :style="{ 'background-color': getProjectBgColor() }"
+      @click="onImageClicked"
+    />
+    <div class="project-details">
+      <h3 class="title">
+        {{ project.custom_title[$i18n.locale] }}
+      </h3>
+      <div class="chips">
+        <Chip v-for="(stack, index) in project.stacks" :key="index">{{
+          stack
+        }}</Chip>
+      </div>
+      <p class="description">
+        {{ project.summery[$i18n.locale] }}
+      </p>
+      <NuxtLink
+        :to="localePath('/projects/' + project.slug)"
+        class="btn btn-link-primary cta"
+        >{{ $t('work.cta.leran_more') }}</NuxtLink
+      >
+    </div>
+  </div>
+</template>
+
+<script>
+import Chip from '@/components/Chip'
+import { getColorValues } from '@/plugins/utils'
+
+export default {
+  components: {
+    Chip,
+  },
+  props: ['project'],
+  methods: {
+    getProjectBgColor() {
+      const colorValues = getColorValues(this.project.primary_color)
+      return (
+        'rgba(' +
+        colorValues[0] +
+        ',' +
+        colorValues[1] +
+        ',' +
+        colorValues[2] +
+        ',.4)'
+      )
+    },
+
+    onImageClicked() {
+      this.$emit('imageClicked')
+    },
+  },
+}
+</script>
+
+<style lang="scss" scooped>
+.project-details {
+  .title {
+    margin: 0 0 10px;
+  }
+  .chip {
+    --chip-height: 20px;
+    font-size: 0.7em;
+  }
+
+  .description {
+    margin: 1em 0;
+    line-height: 1.3em;
+  }
+
+}
+.project-image {
+  max-width: 100%;
+  object-fit: contain;
+  background-color: rgba(41, 41, 41, 0.8);
+}
+
+.project-details-wrapper {
+  margin: 0 auto 2em;
+
+  img {
+    cursor: zoom-in;
+  }
+}
+
+@media screen and (min-width: $md-brakepoint) {
+  .project-details-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .project-details {
+      width: 40%;
+      margin-right: 1em;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-image {
+      width: 60%;
+    }
+  }
+  html[lang='ar'] .project-details {
+    margin-right: 0;
+    margin-left: 1em;
+  }
+}
+
+@media screen and (min-width: $lg-brakepoint) {
+  .project-details-wrapper {
+    .project-details {
+      width: 30%;
+    }
+    .project-image {
+      width: 70%;
+    }
+  }
+}
+</style>

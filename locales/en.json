@@ -1,0 +1,104 @@
+{
+  "about": {
+    "label": "about",
+    "p1": "Hello! I’m Bayoub, a freelance software developer with +4 years of experience",
+    "p2": "Specialized in developing phone apps (Android & iOS) using Flutter and developing back-ends using Laravel.",
+    "p3": {
+      "title": "The standards that I follow in my projects:",
+      "i1": "Using the latest technologies",
+      "i2": "Apply maximum security with optimized performance",
+      "i3": "Choosing the best and fastest ways for development",
+      "i4": "Making sure to satisfy the user needs"
+    },
+    "p4": "Here's some technologies that I love working with:",
+    "p5": "What make me different is making sure that your getting the best results with the best price possible.",
+    "p6": "If you’ve got any questions, don’t hesitate to contact me any time .. I am waiting for you!",
+    "title": "About me"
+  },
+  "contact": {
+    "form": {
+      "email": "email address",
+      "subject": "subject",
+      "enter": "enter your",
+      "message": "message",
+      "name": "name",
+      "required": "required",
+      "send": "send",
+      "sending": "Sending ...",
+      "sending_error": "Sorry, I didn't get your message. Please try to reach me using the other ways",
+      "sending_success": "Thank you!, your message received successfully and I will get in touch with you soon",
+      "palaceholder": {
+        "name": "Plz, Enter your name",
+        "email": "Plz, Enter your email",
+        "subject": "Plz, Enter the subject of your message",
+        "message": "Plz, Enter the subject of your message"
+      }
+    },
+    "label": "contact",
+    "title": "get in touch",
+    "description": "I would love to hear your interesting thoughts and your  ideas. Plz send me a meessage and I will get back to you within 24 hours"
+  },
+  "copyrights": "designed and developed by",
+  "hero": {
+    "lead": "Back-end & Mobile apps software developer",
+    "title": "Bring the BEST of the world to your fingertips",
+    "view-my": "view my",
+    "explore": "explore",
+    "cta": {
+      "explore": "Explore",
+      "contact": "Let's talk",
+      "learn_more": "Learn More",
+      "source_code ": "Source Code",
+      "source_code": "Source Code",
+      "project_page": "Project Page"
+    }
+  },
+  "hire-me": "Hire me",
+  "home": {
+    "label": "home"
+  },
+  "langs": "languages",
+  "resume": "Resume",
+  "skills": {
+    "frameworks": "frameworks",
+    "label": "skills",
+    "languages": "languages",
+    "title": "skills",
+    "tools": "tools"
+  },
+  "work": {
+    "all": "all",
+    "desktop": "desktop",
+    "label": "work",
+    "mobile": "mobile",
+    "web": "web",
+    "protip": "Protip: Click on image for more information",
+    "title": "Latest Projects",
+    "cta": {
+      "leran_more": "learn more",
+      "load_more": "load more",
+      "show_more": "show more",
+      "no_more": "No more projects",
+      "more_projects_on": "More projects available on"
+    }
+  },
+  "alert": {
+    "success_title": "success",
+    "info_title": "info",
+    "warning_title": "warning",
+    "error_title": "error"
+  },
+  "project_details": {
+    "description": "description",
+    "role": "role",
+    "technologies": "Technologies",
+    "screenshots": "Screenshots"
+  },
+  "cta": {
+    "back_to_home": "Home page"
+  },
+  "errors": {
+    "page_not_found": "Sorry, the page you requested could not be found.",
+    "server_error": "Sorry, an error happend"
+  }
+}
