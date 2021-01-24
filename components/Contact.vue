@@ -207,7 +207,7 @@ export default {
       this.recapToken = response
     },
     async onCaptchaExpired() {
-      var recaptcha = this.$refs.recaptcha
+      var recaptcha = this.$recaptcha
       await recaptcha.reset()
       this.recapToken = null
     },
@@ -241,15 +241,7 @@ export default {
           ...payload,
         }),
       })
-        .then((res) => {
-          if (!res.ok) {
-            return res.json().then((json) => {
-              throw json
-            })
-          }
-          return res.json()
-        })
-        .then((data) => {
+        .then(() => {
           self.alert = {
             message: self.$t('contact.form.sending_success'),
             type: 'success',
