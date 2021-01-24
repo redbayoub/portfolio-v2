@@ -1,5 +1,4 @@
 {
-  "todo": "  //TODO: add images",
   "custom_title": {
     "en": "Personal Website v2",
     "ar": "موقعى الشخصي النسخة الثانية"
@@ -19,7 +18,7 @@
   "primary_color": "#ffd42a",
   "btnClass": null,
   "links": {
-    "source_code": "",
+    "source_code": "https://github.com/redbayoub/portfolio-v2",
     "page": "https://www.redbayoub.com"
   },
   "stacks": ["NuxtJs", "VueJs", "SCSS", "JavaScript"],

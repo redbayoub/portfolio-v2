@@ -15,7 +15,7 @@
           :class="project.btnClass"
           href="#description"
           role="button"
-          >{{ $t("hero.cta.learn_more") }}</a
+          >{{ $t('hero.cta.learn_more') }}</a
         >
         <a
           v-if="project.links.page"
@@ -24,8 +24,10 @@
           class="btn btn-outline-primary"
           :class="project.btnClass"
           :href="project.links.page"
+          target="_blank"
+          rel="noopener noreferrer"
           role="button"
-          >{{ $t("hero.cta.project_page") }}</a
+          >{{ $t('hero.cta.project_page') }}</a
         >
         <a
           v-if="project.links.source_code"
@@ -34,8 +36,10 @@
           class="btn btn-outline-primary"
           :class="project.btnClass"
           :href="project.links.source_code"
+          target="_blank"
+          rel="noopener noreferrer"
           role="button"
-          >{{ $t("hero.cta.source_code") }}</a
+          >{{ $t('hero.cta.source_code') }}</a
         >
       </div>
     </div>
@@ -52,9 +56,9 @@
 
 <script>
 export default {
-  name: "project-hero",
-  props: ["project"],
-};
+  name: 'project-hero',
+  props: ['project'],
+}
 </script>
 
 <style lang="scss">
@@ -77,10 +81,10 @@ export default {
     transform: perspective(1500px) rotateY(-45deg) rotateX(10deg);
   }
 
-  html[lang="ar"] & {
+  html[lang='ar'] & {
     direction: rtl;
   }
-  html[lang="ar"] & .project-image {
+  html[lang='ar'] & .project-image {
     transform: perspective(1500px) rotateY(45deg) rotateX(10deg);
   }
 }

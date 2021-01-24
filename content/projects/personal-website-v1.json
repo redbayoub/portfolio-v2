@@ -18,7 +18,7 @@
   "primary_color": "#0F4C81",
   "btnClass": "btn-portfolio-v1",
   "links": {
-    "source_code": "",
+    "source_code": "https://github.com/redbayoub/portfolio-v1",
     "page": "https://v1.redbayoub.com"
   },
   "stacks": ["VueJs", "Bootstrap", "JavaScript"],
