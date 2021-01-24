@@ -112,6 +112,11 @@ export default {
     top: 10px;
     right: 10px;
 
+    html[lang='ar'] & {
+      right: 0;
+      left: 10px;
+    }
+
     .chip {
       padding: 0px 1em;
       background-color: rgba($color: #242424, $alpha: 0.7);
