@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class="overlay" />
-    <NavBar id="navbar"  />
+        <div class="overlay"></div>
+    <NavBar id="navbar" />
+    
     <Hero id="home" class="scrollable" ref="hero" />
     <Work id="work" class="scrollable" ref="work" :allProjects="all_projects" />
     <Skills id="skills" class="scrollable" ref="skills" />

@@ -100,7 +100,15 @@ export default {
       })
 
       // show/hide overlay
-      const overlay = document.querySelector('.overlay')
+      const NAVBAR_OVERLAY_ID = 'navbar-overlay'
+      var overlay = document.querySelector('#' + NAVBAR_OVERLAY_ID)
+      if (!overlay) {
+        // add overlay if doesn't exists
+        overlay = document.createElement('div')
+        overlay.id = NAVBAR_OVERLAY_ID
+        const body = document.querySelector("body")
+        body.appendChild(overlay)
+      }
       overlay.classList.toggle('active')
       // toogle scroll
       this.toggleScroll()
@@ -198,6 +206,22 @@ html[lang='en'] .nav-links a {
   margin: 5px;
   border-radius: 8px;
   transition: all 0.5s ease;
+}
+
+#navbar-overlay {
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 1s linear;
+}
+#navbar-overlay.active {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: block;
+  opacity: 0.8;
 }
 
 @media screen and (min-width: $md-brakepoint) {
