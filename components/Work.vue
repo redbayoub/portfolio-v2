@@ -111,16 +111,7 @@ export default {
 </script>
 
 <style lang="scss">
-.hidden {
-  opacity: 0;
-  height: 0;
-  margin: 0;
-  transform: translateY(-30px);
-}
 
-.item {
-  transition: all 1s;
-}
 
 html[lang='ar'] .work {
   direction: rtl;

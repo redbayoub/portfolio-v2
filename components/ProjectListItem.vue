@@ -22,7 +22,7 @@
       <NuxtLink
         :to="localePath('/projects/' + project.slug)"
         class="btn btn-link-primary cta"
-        >{{ $t('work.cta.leran_more') }}</NuxtLink
+        >{{ $t('work.cta.read_more') }}</NuxtLink
       >
     </div>
   </div>
@@ -72,19 +72,41 @@ export default {
     margin: 1em 0;
     line-height: 1.3em;
   }
-
 }
 .project-image {
   max-width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   background-color: rgba(41, 41, 41, 0.8);
 }
 
 .project-details-wrapper {
   margin: 0 auto 2em;
+  border-radius: 10px;
+  transition: all 0.5s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.12);
+
+  &:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13), 0 3px 6px rgba(0, 0, 0, 0.18);
+  }
+
+  .project-details {
+    padding: 1em;
+  }
+
+  &.hidden {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    transform: translateY(-30px);
+  }
 
   img {
     cursor: zoom-in;
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  html[lang="ar"] & img{
+     border-radius: 10px 0px 0px 10px;
   }
 }
 
