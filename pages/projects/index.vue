@@ -11,7 +11,7 @@
         />
       </client-only>
 
-      <h3 class="page-title">Projects</h3>
+      <h3 class="page-title">{{ $t('work.title') }}</h3>
 
       <div ref="projectsList">
         <ProjectListItem
@@ -39,7 +39,7 @@
         >
       </div>
     </div>
-
+    <Contact />
     <MyFooter />
   </div>
 </template>
@@ -48,6 +48,7 @@
 import NavBar from '@/components/Navbar'
 import ProjectListItem from '@/components/ProjectListItem'
 import MyFooter from '@/components/MyFooter'
+import Contact from '@/components/Contact'
 import { toggleScroll } from '@/plugins/utils.js'
 export default {
   async asyncData({ $content, params, error }) {
@@ -66,6 +67,7 @@ export default {
     NavBar,
     ProjectListItem,
     MyFooter,
+    Contact,
   },
   data() {
     return {

@@ -14,6 +14,7 @@
       <div class="section-content">
         <div ref="projectsList">
           <ProjectListItem
+            style="background-color: rgb(255, 251, 234)"
             class="item"
             v-for="project in allProjects"
             :key="project.slug"
@@ -111,8 +112,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-
 html[lang='ar'] .work {
   direction: rtl;
 }

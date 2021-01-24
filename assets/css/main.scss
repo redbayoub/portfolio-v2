@@ -10,6 +10,9 @@ html[lang='ar'] body {
 }
 
 :root {
+  --primary-color: #ffd42a;
+  --secondary-color: #ff5733;
+  
   --primary-bg-color: #ffd42a;
   --primary-light-bg-color: #fffae6;
   --primary-hover-bg-color: #ffc800;
@@ -68,13 +71,14 @@ section {
 }
 
 .section-content {
-  padding: 1em 0 0;
+  padding: 2em 0 0;
   line-height: 1.5em;
 }
 
 .section-title {
   text-transform: capitalize;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
+  font-weight: normal;
 }
 
 .bg-primary-light {

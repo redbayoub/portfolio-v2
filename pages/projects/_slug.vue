@@ -57,6 +57,7 @@
         </div>
       </template>
     </ProjectDetail>
+    <Contact />
     <MyFooter />
   </div>
 </template>
@@ -68,6 +69,7 @@ import ProjectDetail from '@/components/ProjectDetail'
 import Chip from '@/components/Chip'
 import SvgIcon from '@/components/SvgPathIcon'
 import MyFooter from '@/components/MyFooter'
+import Contact from '@/components/Contact'
 import { projectDetailsMeta } from '@/plugins/pages_meta'
 import { isMobile, toggleScroll } from '@/plugins/utils'
 
@@ -80,6 +82,7 @@ export default {
     Chip,
     MyFooter,
     SvgIcon,
+    Contact,
   },
   async asyncData({ $content, params, error }) {
     const slug = params.slug
