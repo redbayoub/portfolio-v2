@@ -5,7 +5,7 @@
 </template>
 
 <script>
-export default { name: "chip" };
+export default { name: 'chip' }
 </script>
 
 <style lang="scss">
@@ -13,7 +13,7 @@ export default { name: "chip" };
   display: flex;
   --chip-height: 30px;
   text-align: center;
-  background-color: #eeeeee;
+  background-color: rgba($color: #eeeeee, $alpha: .8);
   border-radius: calc(0.5 * var(--chip-height));
   font-size: 0.8em;
   height: var(--chip-height);

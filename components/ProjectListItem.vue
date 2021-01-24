@@ -96,17 +96,14 @@ export default {
   &.hidden {
     opacity: 0;
     height: 0;
+    width: 0;
     margin: 0;
     transform: translateY(-30px);
   }
 
   img {
     cursor: zoom-in;
-    border-radius: 0px 10px 10px 0px;
-  }
-
-  html[lang="ar"] & img{
-     border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 10px 0px 0px;
   }
 }
 
@@ -124,7 +121,12 @@ export default {
 
     .project-image {
       width: 60%;
+      border-radius: 0px 10px 10px 0px;
     }
+    html[lang='ar'] & .project-image {
+      border-radius: 10px 0px 0px 10px;
+    }
+  
   }
   html[lang='ar'] .project-details {
     margin-right: 0;
