@@ -23,11 +23,6 @@
       <p class="description">
         {{ project.summery[$i18n.locale] }}
       </p>
-      <NuxtLink
-        :to="localePath('/projects/' + project.slug)"
-        class="btn btn-link-primary"
-        >{{ $t('work.cta.read_more') }}</NuxtLink
-      >
     </div>
   </div>
 </template>

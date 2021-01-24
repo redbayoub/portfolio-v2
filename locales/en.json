@@ -19,10 +19,8 @@
     "form": {
       "email": "email address",
       "subject": "subject",
-      "enter": "enter your",
       "message": "message",
       "name": "name",
-      "required": "required",
       "send": "send",
       "sending": "Sending ...",
       "sending_error": "Sorry, I didn't get your message. Please try to reach me using the other ways",
@@ -42,45 +40,27 @@
   "hero": {
     "lead": "Back-end & Mobile apps software developer",
     "title": "Bring the BEST of the world to your fingertips",
-    "view-my": "view my",
-    "explore": "explore",
     "cta": {
       "explore": "Explore",
       "contact": "Let's talk",
       "learn_more": "Learn More",
-      "source_code ": "Source Code",
       "source_code": "Source Code",
       "project_page": "Project Page"
     }
   },
-  "hire-me": "Hire me",
   "home": {
     "label": "home"
   },
-  "langs": "languages",
-  "resume": "Resume",
   "skills": {
-    "frameworks": "frameworks",
     "label": "skills",
-    "languages": "languages",
-    "title": "skills",
-    "tools": "tools"
+    "title": "skills"
   },
   "work": {
-    "all": "all",
-    "desktop": "desktop",
     "label": "work",
-    "mobile": "mobile",
-    "web": "web",
-    "protip": "Protip: Click on image for more information",
     "title": "Latest Projects",
     "cta": {
-      "leran_more": "learn more",
-      "load_more": "load more",
       "show_more": "show more",
-      "no_more": "No more projects",
-      "more_projects_on": "More projects available on",
-      "read_more": "Read More"
+      "more_projects_on": "More projects available on"
     }
   },
   "alert": {
