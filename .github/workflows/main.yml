@@ -24,7 +24,7 @@ jobs:
        COMMIT_MESSAGE: 'push updates from private'
        COMMIT_USERNAME: 'github-bot'
        COMMIT_EMAIL: 'github-bot@example.com'
-       DEST_REPO_PATH: './dest_repo'
+       DEST_REPO_PATH: './portfolio-v2'
      
     steps:
     
@@ -35,7 +35,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: ${{ env.DEST_REPO }}
-        path:  ${{ env.DEST_REPO_PATH }}
       
     - name: set commit email & username
       run: |
