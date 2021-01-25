@@ -46,18 +46,14 @@ jobs:
     - name: copy files
       run: cp -a -r "$SOURCE_REPO_PATH" "$DEST_REPO_PATH"
       
-    - name: open clone directory
-      run: cd "$DEST_REPO_PATH"
-    
     - name: remove unncessry files & directories
-      run: rm -d -r ./.github/
+      run: |
+       cd "$DEST_REPO_PATH"
+       rm -d -r ./.github/
     
-    - name: add all files to git
-      run: git add .
-      
-    - name: commit all files
-      run:  git commit --message "$COMMIT_MESSAGE"
-    
-    - name: push the result
-      run: git push -u origin
-      
+    - name: add all files to git & commit & push
+      run: |
+        cd "$DEST_REPO_PATH"
+        git add .
+        git commit --message "$COMMIT_MESSAGE"
+        git push -u origin
