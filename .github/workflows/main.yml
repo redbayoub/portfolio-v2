@@ -16,17 +16,11 @@ jobs:
   copy-file:
     runs-on: ubuntu-latest
     env: 
-       
-       # these env vars are set using action
-       CURR_BRANCH: 'v2'
-       SOURCE_REPO: 'redbayoub/portofolio'
        DEST_REPO: 'redbayoub/portfolio-v2' 
   
-       COMMIT_MESSAGE: 'push updates from private'
+       COMMIT_MESSAGE: 'updates portfolio-v2'
        COMMIT_USERNAME: 'github-bot'
        COMMIT_EMAIL: 'github-bot@example.com'
-       SOURCE_REPO_PATH: './source_repo'
-       DEST_REPO_PATH: './dest_repo'
      
     steps:
     - name: Checkout
@@ -41,4 +35,5 @@ jobs:
         destination_repo: ${{ env.DEST_REPO }}
         user_email:  ${{ env.COMMIT_EMAIL }}
         user_name:  ${{ env.COMMIT_USERNAME }}
+        commit_msg:  ${{ env.COMMIT_MESSAGE }}
  
