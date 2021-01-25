@@ -38,7 +38,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with: 
         source_folder: "."
-        destination_repo: "$DEST_REPO"
-        user_email: "$COMMIT_EMAIL"
-        user_name:  "$COMMIT_USERNAME" 
+        destination_repo: ${{ env.DEST_REPO }}
+        user_email:  ${{ env.COMMIT_EMAIL }}
+        user_name:  ${{ env.COMMIT_USERNAME }}
  
