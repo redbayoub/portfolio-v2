@@ -45,9 +45,6 @@ jobs:
     
     - name: copy files
       run: cp -a -r "$SOURCE_REPO_PATH" "$DEST_REPO_PATH"
-      
-    - name: remove unncessry files & directories
-      run: rm -d -r "$DEST_REPO_PATH/.github"
     
     - name: add all files to git & commit & push
       run: |
