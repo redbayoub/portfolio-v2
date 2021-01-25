@@ -24,17 +24,15 @@ jobs:
        COMMIT_MESSAGE: 'push updates from private'
        COMMIT_USERNAME: 'github-bot'
        COMMIT_EMAIL: 'github-bot@example.com'
-       DEST_REPO_PATH: './portfolio-v2'
+       DEST_REPO_PATH: './dest_repo'
      
     steps:
     
     - name: Checkout code the current repo with the current branch
       uses: actions/checkout@v2
-     
-    - name: Checkout code of the dest repo
-      uses: actions/checkout@v2
-      with:
-        repository: ${{ env.DEST_REPO }}
+   
+    - name: clone dest repo
+      run: git clone "https://github.com/$DEST_REPO.git" "$DEST_REPO_PATH"
       
     - name: set commit email & username
       run: |
@@ -47,6 +45,9 @@ jobs:
       
     - name: open clone directory
       run: cd "$DEST_REPO_PATH"
+    
+    - name: remove unncessry files & directories
+      run: rm -d -r ./.github/
     
     - name: add all files to git
       run: git add .
