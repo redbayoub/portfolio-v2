@@ -19,7 +19,8 @@ jobs:
        
        # these env vars are set using action
        CURR_BRANCH: 'v2'
-       DEST_REPO: 'redbayoub/portfolio-v2'
+       SOURCE_REPO: 'redbayoub/portofolio'
+       DEST_REPO: 'redbayoub/portfolio-v2' 
   
        COMMIT_MESSAGE: 'push updates from private'
        COMMIT_USERNAME: 'github-bot'
@@ -29,10 +30,8 @@ jobs:
      
     steps:
     
-    - name: Checkout code the current repo with the current branch
-      uses: actions/checkout@v2
-      with:
-        path:  ${{ env.SOURCE_REPO_PATH }}
+    - name: clone source repo
+      run: git clone -b "$CURR_BRANCH" "https://github.com/$SOURCE_REPO.git" "$DEST_REPO_PATH" 
    
     - name: clone dest repo
       run: git clone "https://github.com/$DEST_REPO.git" "$DEST_REPO_PATH"
@@ -44,11 +43,15 @@ jobs:
 
     
     - name: copy files
-      run: cp -a -r "$SOURCE_REPO_PATH" "$DEST_REPO_PATH"
+      run: cp -a -r "$SOURCE_REPO_PATH/." "$DEST_REPO_PATH"
+      
+    - name: remove unncessery files
+      run: |
+        cd "$DEST_REPO_PATH"
+        rm -r .github
     
     - name: add all files to git & commit & push
       run: |
-        cd "$DEST_REPO_PATH"
         git add .
         git commit --message "$COMMIT_MESSAGE"
         git push -u origin
