@@ -47,9 +47,7 @@ jobs:
       run: cp -a -r "$SOURCE_REPO_PATH" "$DEST_REPO_PATH"
       
     - name: remove unncessry files & directories
-      run: |
-       cd "$DEST_REPO_PATH"
-       rm -d -r ./.github/
+      run: rm -d -r "$DEST_REPO_PATH/.github"
     
     - name: add all files to git & commit & push
       run: |
