@@ -1,0 +1,74 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Push updates on branch v2 to other repo
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches:
+      - v1
+      - v2
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    env: 
+       
+       # these env vars are set using action
+       #  CURR_BRANCH: 'v1'
+       #  DEST_REPO: 'redbayoub/portfolio-v1'
+  
+       COMMIT_MESSAGE: 'push updates from private'
+       COMMIT_USERNAME: 'github-bot'
+       COMMIT_EMAIL: 'github-bot@example.com'
+       DEST_REPO_PATH: './dest_repo'
+     
+    steps:
+    - name: Extract current branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+    
+    - name: Set CURR_BRANCH env var
+      run: echo "CURR_BRANCH=$(echo ${{ steps.extract_branch.outputs.branch }} )" >> $GITHUB_ENV
+      
+    - name: Set DEST_REPO env var
+      run: echo "DEST_REPO=$(echo 'redbayoub/portfolio-$CURR_BRANCH' )" >> $GITHUB_ENV
+      
+    
+    - name: Checkout code the current repo with the current branch
+      uses: actions/checkout@v2
+      with:
+        ref: "$CURR_BRANCH"
+     
+    - name: Checkout code of the dest repo
+      uses: actions/checkout@v2
+      with:
+        repository: "$DEST_REPO"
+        path: "$DEST_REPO_PATH"
+      
+    - name: set commit email & username
+      run: |
+       git config --global user.email "$COMMIT_EMAIL"
+       git config --global user.name "$COMMIT_USERNAME"
+
+    
+    - name: copy files
+      run: cp -a -r . "./$DEST_REPO_PATH"
+      
+    - name: open clone directory
+      run: cd "$DEST_REPO_PATH"
+    
+    - name: add all files to git
+      run: git add .
+      
+    - name: commit all files
+      run:  git commit --message "$COMMIT_MESSAGE"
+    
+    - name: push the result
+      run: git push -u origin
+      
