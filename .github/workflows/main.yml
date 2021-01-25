@@ -29,50 +29,16 @@ jobs:
        DEST_REPO_PATH: './dest_repo'
      
     steps:
-    - name: clone source repo
-      uses: actions/checkout@v2.3.4
-      with:
-        ref: "$CURR_BRANCH"
-        path: "$SOURCE_REPO_PATH"
-        
-        
-    - name: clone dest repo
-      uses: actions/checkout@v2.3.4
-      with:
-        path: "$DEST_REPO_PATH"
-        repository:  "$DEST_REPO"
-    
-    #- name: clone source repo
-     # run: git clone -b "$CURR_BRANCH" "git@github.com:$SOURCE_REPO.git" "$SOURCE_REPO_PATH" 
-   
-   #  - name: clone dest repo
-    #   run: git clone "git@github.com:$DEST_REPO.git" "$DEST_REPO_PATH"
+    - name: Checkout
+      uses: actions/checkout@v2 
       
-    - name: set commit email & username
-      run: |
-       git config --global user.email "$COMMIT_EMAIL"
-       git config --global user.name "$COMMIT_USERNAME"
-
-    - name: remove unncessery files from source repo
-      run: |
-        cd "$SOURCE_REPO_PATH"
-        rm -r .github
-        rm -r .git
-        cd ..
-
-    - name: remove all files from cloned dest repo excliding .git
-      run: |
-        cd "$DEST_REPO_PATH"
-        rm -r -v !(".git") 
-        cd ..
-    
-    - name: copy files
-      run: cp -a -r "$SOURCE_REPO_PATH/." "$DEST_REPO_PATH"
-      
-    
-    - name: add all files to git & commit & push
-      run: |
-        cd "$DEST_REPO_PATH"
-        git add .
-        git commit --message "$COMMIT_MESSAGE"
-        git push -u origin
+    - name: Push a folder to another repository
+      uses: crykn/copy_folder_to_another_repo_action@v1.0.6
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with: 
+        source_folder: "."
+        destination_repo: "$DEST_REPO"
+        user_email: "$COMMIT_EMAIL"
+        user_name:  "$COMMIT_USERNAME" 
+ 
