@@ -41,7 +41,7 @@ jobs:
 
     
     - name: copy files
-      run: cp -a -r . "./$DEST_REPO_PATH"
+      run: cp -a -r . "$DEST_REPO_PATH"
       
     - name: open clone directory
       run: cd "$DEST_REPO_PATH"
