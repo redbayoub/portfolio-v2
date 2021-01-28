@@ -24,7 +24,9 @@ jobs:
       
     - name: add the dest repo
       run: git remote add origin2 "https://github.com/$DEST_REPO.git"
-    
+    - name:  setting up git configs
+      run: |
+          git config -l | grep 'http\..*\.extraheader' | cut -d= -f1 | xargs -L1 git config --unset-all
     - name: push updates
       run: git push origin2 v2
 
