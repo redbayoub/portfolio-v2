@@ -17,23 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     env: 
        DEST_REPO: 'redbayoub/portfolio-v2' 
-  
-       COMMIT_MESSAGE: 'updates portfolio-v2'
-       COMMIT_USERNAME: 'github-bot'
-       COMMIT_EMAIL: 'github-bot@example.com'
      
     steps:
     - name: Checkout
       uses: actions/checkout@v2 
       
-    - name: Push a folder to another repository
-      uses: crykn/copy_folder_to_another_repo_action@v1.0.6
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      with: 
-        source_folder: "."
-        destination_repo: ${{ env.DEST_REPO }}
-        user_email:  ${{ env.COMMIT_EMAIL }}
-        user_name:  ${{ env.COMMIT_USERNAME }}
-        commit_msg:  ${{ env.COMMIT_MESSAGE }}
+    - name: add the dest repo
+      run: git remote add origin2 "https://github.com/$DEST_REPO.git"
+    
+    - name: push updates
+      run: git push origin2 v2
+
  
