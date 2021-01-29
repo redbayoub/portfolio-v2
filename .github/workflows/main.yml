@@ -18,7 +18,7 @@ jobs:
     env: 
        DEST_REPO: 'redbayoub/portfolio-v2'
        GITHUB_ACTOR: ${{  github.actor }}
-       GITHUB_TOKEN: ${{  secrets.API_TOKEN_GITHUB }}
+       GITHUB_API_TOKEN: ${{  secrets.API_TOKEN_GITHUB }}
      
     steps:
     - name: Checkout
@@ -34,7 +34,7 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ env.GITHUB_API_TOKEN }}
         branch: 'master'
         repository: ${{ env.DEST_REPO }}
  
