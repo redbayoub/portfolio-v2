@@ -17,7 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     env: 
        DEST_REPO: 'redbayoub/portfolio-v2'
-       GITHUB_ACTOR: ${{  github.actor }}
        GITHUB_API_TOKEN: ${{  secrets.API_TOKEN_GITHUB }}
      
     steps:
@@ -31,6 +30,12 @@ jobs:
       run: |
         rm -r .github
         ls -la
+        
+    - name: setup git config
+      run: |
+          git config --global user.email "github-bot@example.com"
+          git config --global user.name "GitHub Bot"
+
         
     - name: add & commit changes
       run: |
