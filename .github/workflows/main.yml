@@ -23,7 +23,18 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2 
-  
-    - name: push updates
-      run: git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$DEST_REPO.git" v2
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+    
+    - name: remove unnessery files and directories
+      run: |
+        rm -r .github
+    
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: 'master'
+        repository: ${{ env.DEST_REPO }}
  
