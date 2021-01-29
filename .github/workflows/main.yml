@@ -31,6 +31,11 @@ jobs:
       run: |
         rm -r .github
         ls -la
+        
+    - name: add & commit changes
+      run: |
+         git add .
+         git commit -m "removed workflow files"
     
     - name: Push changes
       uses: ad-m/github-push-action@master
