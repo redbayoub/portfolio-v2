@@ -30,6 +30,7 @@ jobs:
     - name: remove unnessery files and directories
       run: |
         rm -r .github
+        ls -la
     
     - name: Push changes
       uses: ad-m/github-push-action@master
