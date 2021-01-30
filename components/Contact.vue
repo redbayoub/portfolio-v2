@@ -19,7 +19,7 @@
                 @click="onContactLinkClicked(contact.type)"
               >
                 <div class="contact-icon">
-                  <SvgIcon :name="contact.iconName" fill="black" />
+                  <SvgIcon :name="contact.iconName" fill="var(--text-color)" />
                 </div>
                 <div class="contact-details">{{ contact.text }}</div>
               </a>
@@ -112,6 +112,7 @@
               ></textarea>
             </div>
             <recaptcha
+              id="recaptcha"
               class="recaptcha"
               data-theme="dark"
               @error="onCaptchaExpired"
@@ -280,8 +281,7 @@ export default {
 
 <style lang="scss">
 .contact {
-  background-color: #363636;
-  color: white;
+  background-color: #3f3f3f;
 }
 
 html[lang='ar'] .contact {
@@ -289,12 +289,13 @@ html[lang='ar'] .contact {
 }
 
 .contact .description {
-  color: #a2a2a2;
+  color: var(--text-color);
 }
 
 .contact-details {
   display: none;
   transition: all 0.3s ease-in;
+  color: var(--text-color);
 }
 
 [lang='ar'] .contact-details {
@@ -303,9 +304,9 @@ html[lang='ar'] .contact {
 
 .contact-icon {
   border-radius: 50%;
-  background-color: white;
+  background-color: var(--bg-color);
   padding: 10px;
-  transition: all 0.3s ease-in;
+  @include defaultTransition();
 }
 .contact-icon svg {
   display: block;
@@ -326,10 +327,6 @@ html[lang='ar'] .contact {
 @media screen and (min-width: $md-brakepoint) {
   .contact .section-content {
     display: flex;
-    a {
-      text-decoration: none;
-      color: black;
-    }
 
     .section-details {
       padding-right: 2em;
@@ -349,8 +346,9 @@ html[lang='ar'] .contact {
       width: 300px;
       padding: 10px;
       border-radius: 800000px;
-      background-color: white;
+      background-color: var(--bg-color);
       text-align: center;
+      @include defaultTransition();
     }
   }
 
@@ -371,7 +369,7 @@ html[lang='ar'] .contact {
 
 .contact-list a:hover .contact-icon,
 .contact-list a:hover .contact-details {
-  background-color: #fff4ca;
+  background-color: var(--bg-color-darken);
 }
 
 /* form styling */
@@ -383,34 +381,34 @@ html[lang='ar'] .contact {
 form label {
   padding-bottom: 0.5em;
   text-transform: capitalize;
-}
-
-input:focus,
-textarea:focus {
-  background-color: var(--primary-light-bg-color);
-  outline-color: var(--primary-bg-color);
+  color: var(--text-color);
 }
 
 .form-control {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 8px;
   box-sizing: border-box;
   resize: vertical;
-}
-::placeholder {
-  text-transform: capitalize;
-  opacity: 1; /* Firefox */
-}
+  border: none;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Montserrat, Arial, sans-serif;
 
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  text-transform: capitalize;
-}
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  text-transform: capitalize;
+  html[lang='ar'] & {
+    font-family: Tajawal, Helvetica, Arial, sans-serif;
+  }
+  @include defaultTransition();
+  &:focus,
+  &:hover {
+    outline-style: none;
+    background-color: var(--bg-color-darken);
+  }
+  &::placeholder,
+  &:-ms-input-placeholder,
+  &::-ms-input-placeholder {
+    font-size: 0.9em;
+    text-transform: capitalize;
+  }
 }
 </style>

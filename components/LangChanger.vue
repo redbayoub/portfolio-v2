@@ -30,7 +30,7 @@ export default {
   methods: {
     changeLang() {
       this.trackChangeLanguage(this.new_lang)
-      console.log(this.switchLocalePath(this.new_lang));
+      console.log(this.switchLocalePath(this.new_lang))
       location.replace(this.switchLocalePath(this.new_lang))
     },
     trackChangeLanguage(lang) {
@@ -46,9 +46,11 @@ export default {
 <style scoped>
 a {
   letter-spacing: 0px !important;
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
+  font-family: Tajawal, Helvetica, Arial, sans-serif;
 }
+
 a img {
   margin: 0 10px 0 0;
 }

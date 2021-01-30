@@ -5,7 +5,7 @@
     width="35"
     height="35"
     viewBox="0 0 38.766 42.196"
-    fill="black"
+    fill="var(--text-color)"
   >
     <g transform="translate(-118.2 -110.44)" shape-rendering="auto">
       <path

@@ -13,7 +13,7 @@ export default { name: 'chip' }
   display: flex;
   --chip-height: 30px;
   text-align: center;
-  background-color: rgba($color: #eeeeee, $alpha: .8);
+  background-color: var(--bg-color-darken);
   border-radius: calc(0.5 * var(--chip-height));
   font-size: 0.8em;
   height: var(--chip-height);

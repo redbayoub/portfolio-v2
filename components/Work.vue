@@ -14,7 +14,7 @@
       <div class="section-content">
         <div ref="projectsList">
           <ProjectListItem
-            style="background-color: rgb(255, 251, 234)"
+            style="background-color: var(--bg-color)"
             class="item"
             v-for="project in allProjects"
             :key="project.slug"
@@ -33,9 +33,9 @@
           @click.prevent="loadMore()"
           >{{ $t('work.cta.show_more') }}</a
         >
-        <div v-else class="text-center" style="color: grey">
+        <div v-else class="text-center">
           {{ $t('work.cta.more_projects_on') }}
-          <a href="https://github.com/redbayoub" style=""
+          <a href="https://github.com/redbayoub" class="btn-link-primary"
             ><strong>Github</strong></a
           >
         </div>
@@ -118,7 +118,7 @@ html[lang='ar'] .work {
 
 .load-more {
   display: block;
-  margin: 20px auto 0;
+  margin:0 auto 0;
   max-width: 200px;
 }
 </style>

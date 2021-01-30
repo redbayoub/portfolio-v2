@@ -6,7 +6,6 @@
         <SkillCard
           :key="index"
           v-for="(skill, index) in skills"
-          class="skill-card"
           :svg="skill.svg"
           :title="getSkillTitle(skill)"
           :content="skill.content"
@@ -60,14 +59,14 @@ export default {
           title_en: "Version Control",
           title_ar: "نظم التحكم في النسخ",
           content: "Git, Github",
-          iconFill: "#24292E",
+          iconFill: "#eee",
         },
         {
           svg: "laptopIcon",
           title_en: "Desktop Development (obsolete)",
           title_ar: "تطوير برامج الحاسوب (قديم)",
           content: "Java, JavaFX",
-          iconFill: "#636363",
+          iconFill: "#eee",
         },
       ],
     };

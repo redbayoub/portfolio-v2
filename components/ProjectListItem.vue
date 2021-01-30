@@ -59,6 +59,7 @@ export default {
 
 <style lang="scss" scooped>
 .project-details {
+  color: var(--text-color);
   .title {
     font-weight: bold;
     font-size: 1.3rem;
@@ -80,12 +81,7 @@ export default {
   position: relative;
   margin: 0 auto 2em;
   border-radius: 10px;
-  transition: all 0.5s;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.12);
-
-  &:hover {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13), 0 3px 6px rgba(0, 0, 0, 0.18);
-  }
+  @include defaultTransition();
 
   .project-details {
     padding: 1em;

@@ -1,7 +1,7 @@
 <template>
   <div class="container hero project-hero">
     <div class="hero-text">
-      <h1 class="hero-header" :style="{ color: project.primary_color }">
+      <h1 class="hero-header" >
         {{ project.custom_title[$i18n.locale] }}
       </h1>
 

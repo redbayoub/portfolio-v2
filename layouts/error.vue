@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #eee">
+  <div>
     <NavBar :empty="true" />
     <div class="text-center not-found container">
       <span class="status-code"

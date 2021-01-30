@@ -3,4 +3,6 @@ $md-brakepoint: 768px;
 $lg-brakepoint: 1024px;
 $xl-brakepoint: 1280px;
 
-
+@mixin defaultTransition {
+  transition: all 0.5s ease-in;
+}

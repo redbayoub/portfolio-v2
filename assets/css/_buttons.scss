@@ -20,9 +20,11 @@
   text-align: center;
   background-color: transparent;
   border: 2px solid var(--primary-bg-color);
+  color: var(--text-color);
 }
 .btn-outline-primary:hover {
   background-color: var(--primary-hover-bg-color);
+  color: black;
 }
 
 .btn-link-primary {
@@ -30,9 +32,10 @@
   padding: 0;
   text-align: start;
   background-color: transparent;
+  color: var(--text-color);
 }
 .btn-link-primary:hover {
-  color: var(--secondary-color);
+  color: var(--text-color-highlighted);
 }
 
 .btn-lg {
@@ -41,9 +44,8 @@
 
 .btn:disabled,
 .btn[disabled] {
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
+  border: none;
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -76,7 +78,7 @@
 @mixin generate-project-btn($name, $primary-color, $text-color) {
   $project-primary-dark-color: darken(
     $color: $primary-color,
-    $amount: 5,
+    $amount: 5
   );
 
   .btn-#{$name} {

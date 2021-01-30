@@ -26,12 +26,12 @@ export default {
 
 <style>
 .skill-card {
-  color: #031e36;
+  color: var(--text-color);
   text-align: center;
 }
 .skill-card .card-text {
-  font-size: 0.9em;
-  color: #706f6f;
+  color: var(--text-color);
+  font-size: .9em;
 }
 .skill-title {
   font-size: 1.25rem;

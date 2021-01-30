@@ -106,7 +106,7 @@ export default {
         // add overlay if doesn't exists
         overlay = document.createElement('div')
         overlay.id = NAVBAR_OVERLAY_ID
-        const body = document.querySelector("body")
+        const body = document.querySelector('body')
         body.appendChild(overlay)
       }
       overlay.classList.toggle('active')
@@ -124,7 +124,7 @@ export default {
 nav {
   background-color: var(--nav-bar-bg-color);
   z-index: 2;
-  box-shadow: inset 0 20px 20px -20px rgba($color: #ffd42a, $alpha: 0.7);
+  //box-shadow: inset 0 20px 20px -20px rgba($color: #ffd42a, $alpha: 0.7);
   transition: background-color 500ms linear;
 }
 
@@ -147,6 +147,7 @@ nav.fixed + * {
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-left: 10px;
+  color: var(--text-color);
 }
 
 html[lang='ar'] .logo-text {
@@ -170,6 +171,7 @@ html[lang='ar'] .logo-text {
   padding: 0;
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
+  background-color: #363636;
 }
 .nav-active .nav-links {
   transform: translateX(0%);
@@ -181,13 +183,14 @@ html[lang='ar'] .logo-text {
   opacity: 0;
   list-style: none;
 }
-.nav-links .active {
+.nav-links .active a {
   font-weight: bold;
+  color: var(--text-color-highlighted);
 }
 
 .nav-links a {
   text-decoration: none;
-  color: black;
+  color: var(--text-color);
 }
 
 html[lang='en'] .nav-links a {
@@ -202,7 +205,7 @@ html[lang='en'] .nav-links a {
 .burger div {
   width: 25px;
   height: 3px;
-  background-color: rgb(37, 37, 37);
+  background-color: var(--text-color);
   margin: 5px;
   border-radius: 8px;
   transition: all 0.5s ease;
