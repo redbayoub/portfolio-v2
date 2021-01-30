@@ -15,6 +15,7 @@
                 name
                 :href="contact.href"
                 target="_blank"
+                rel="noopener noreferrer"
                 role="button"
                 @click="onContactLinkClicked(contact.type)"
               >
