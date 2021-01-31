@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar :empty="true" />
-    <div class="text-center not-found container">
+    <div class=" not-found container">
       <span class="status-code"
         ><strong>{{ error.statusCode }}</strong></span
       >
@@ -42,12 +42,12 @@ export default {
 
 <style lang="scss">
 .not-found {
-  height: 100vh;
-  margin: 0 auto;
+  height: calc(100vh - var(--nav-bar-height));
+  //margin: 0 auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  text-align: center;
   .status-code {
     font-size: 5em;
     letter-spacing: 5px;

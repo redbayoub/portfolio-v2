@@ -12,19 +12,19 @@
       </client-only>
 
       <div class="section-content">
-        <div ref="projectsList">
+        <transition-group tag="div" name="list">
           <ProjectListItem
             style="background-color: var(--bg-color)"
             class="item"
-            v-for="project in allProjects"
+            v-for="project in displayedProjects"
             :key="project.slug"
             :project="project"
             @imageClicked="onImageClicked(project)"
           />
-        </div>
+        </transition-group>
 
         <a
-          v-if="displayedProjects < allProjects.length"
+          v-if="displayedProjects.length < allProjects.length"
           name
           id
           class="btn btn-primary load-more"
@@ -54,19 +54,12 @@ export default {
   },
   props: ['allProjects'],
   mounted() {
-    const self = this
-    this.$refs.projectsList.children.forEach((child, index) => {
-      if (index < self.projectsPerPage) {
-        child.classList.remove('hidden')
-      } else {
-        child.classList.add('hidden')
-      }
-    })
+    this.displayedProjects = this.allProjects.slice(0, this.projectsPerPage)
   },
   data() {
     return {
       projectsPerPage: 2,
-      displayedProjects: 2,
+      displayedProjects: [],
       showImageModal: false,
       imgs: [],
     }
@@ -85,17 +78,11 @@ export default {
         ',.4)'
       )
     },
-    async loadMore() {
-      const self = this
-      this.displayedProjects += this.projectsPerPage
-      await this.$nextTick()
-      this.$refs.projectsList.children.forEach((child, index) => {
-        if (index < self.displayedProjects) {
-          child.classList.remove('hidden')
-        } else {
-          child.classList.add('hidden')
-        }
-      })
+    loadMore() {
+      this.displayedProjects = this.allProjects.slice(
+        0,
+        this.displayedProjects.length + this.projectsPerPage
+      )
     },
     async onImageClicked(project) {
       this.imgs = project.thumbnail_img
@@ -112,13 +99,22 @@ export default {
 </script>
 
 <style lang="scss">
+.list-enter-active,
+.list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
 html[lang='ar'] .work {
   direction: rtl;
 }
 
 .load-more {
   display: block;
-  margin:0 auto 0;
+  margin: 0 auto 0;
   max-width: 200px;
 }
 </style>

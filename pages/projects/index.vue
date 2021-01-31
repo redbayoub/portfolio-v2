@@ -10,21 +10,21 @@
           @hide="handleHide"
         />
       </client-only>
+      <div style="height:50px"></div>
+      <h2 class="page-title">{{ $t('work.title') }}</h2>
 
-      <h3 class="page-title">{{ $t('work.title') }}</h3>
-
-      <div ref="projectsList">
+      <transition-group tag="div" name="list">
         <ProjectListItem
           style="background-color: var(--bg-color-darken)"
-          v-for="project in all_projects"
+          v-for="project in displayedProjects"
           :key="project.slug"
           :project="project"
           @imageClicked="onImageClicked(project)"
         />
-      </div>
+      </transition-group>
 
       <a
-        v-if="displayedProjects < all_projects.length"
+        v-if="displayedProjects.length < allProjects.length"
         name
         id
         class="btn btn-primary load-more"
@@ -53,15 +53,14 @@ import Contact from '@/components/Contact'
 import { toggleScroll } from '@/plugins/utils.js'
 export default {
   async asyncData({ $content, params, error }) {
-    const all_projects = await $content('projects')
+    const allProjects = await $content('projects')
       .sortBy('order', 'desc')
       .fetch()
       .catch((err) => {
         error({ statusCode: 404, message: 'Page not found' })
       })
-    const projectsPerPage = 10
     return {
-      all_projects,
+      allProjects,
     }
   },
   components: {
@@ -72,36 +71,23 @@ export default {
   },
   data() {
     return {
-      projectsPerPage: 10,
-      all_projects: [],
-      displayedProjects: 10,
+      projectsPerPage: 5,
+      allProjects: [],
+      displayedProjects: [],
       showImageModal: false,
       imgs: [],
     }
   },
   mounted() {
-    const self = this
-    this.$refs.projectsList.children.forEach((child, index) => {
-      if (index < self.projectsPerPage) {
-        child.classList.remove('hidden')
-      } else {
-        child.classList.add('hidden')
-      }
-    })
+    this.displayedProjects = this.allProjects.slice(0, this.projectsPerPage)
   },
   methods: {
     toggleScroll,
-    async loadMore() {
-      const self = this
-      this.displayedProjects += this.projectsPerPage
-      await this.$nextTick()
-      this.$refs.projectsList.children.forEach((child, index) => {
-        if (index < self.displayedProjects) {
-          child.classList.remove('hidden')
-        } else {
-          child.classList.add('hidden')
-        }
-      })
+    loadMore() {
+      this.displayedProjects = this.allProjects.slice(
+        0,
+        this.displayedProjects.length + this.projectsPerPage
+      )
     },
     async onImageClicked(project) {
       this.imgs = project.thumbnail_img

@@ -87,14 +87,6 @@ export default {
     padding: 1em;
   }
 
-  &.hidden {
-    opacity: 0;
-    height: 0;
-    width: 0;
-    margin: 0;
-    transform: translateY(-30px);
-  }
-
   img {
     cursor: zoom-in;
     border-radius: 10px 10px 0px 0px;

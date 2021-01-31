@@ -66,6 +66,7 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-i18n',
     '@nuxtjs/sitemap',
+    'nuxt-lazy-load'
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
