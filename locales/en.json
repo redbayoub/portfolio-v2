@@ -82,5 +82,8 @@
   "errors": {
     "page_not_found": "Sorry, the page you requested could not be found.",
     "server_error": "Sorry, an error happend"
+  },
+  "projects_list": {
+    "title": "Projects List"
   }
 }

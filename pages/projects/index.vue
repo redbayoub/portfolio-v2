@@ -11,7 +11,7 @@
         />
       </client-only>
       <div style="height:50px"></div>
-      <h2 class="page-title">{{ $t('work.title') }}</h2>
+      <h2 class="page-title">{{ $t('projects_list.title') }}</h2>
 
       <transition-group tag="div" name="list">
         <ProjectListItem
@@ -76,6 +76,12 @@ export default {
       displayedProjects: [],
       showImageModal: false,
       imgs: [],
+    }
+  },
+  head() {
+    return {
+      titleTemplate: '%s | Red Bayoub Portfolio',
+      title: this.$t('projects_list.title')
     }
   },
   mounted() {

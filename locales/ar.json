@@ -82,5 +82,8 @@
     "role": "الدور",
     "technologies": "التقنيات",
     "screenshots": "الصور"
+  },
+  "projects_list": {
+    "title": "قائمة المشاريع"
   }
 }
