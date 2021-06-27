@@ -103,6 +103,7 @@ export default {
     const projectMeta = projectDetailsMeta(this.project)
     const locale = this.$i18n.locale
     return {
+      titleTemplate: '%s | Red Bayoub Portfolio',
       title: projectMeta.title[locale],
       meta: [
         {
