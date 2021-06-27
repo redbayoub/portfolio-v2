@@ -150,10 +150,6 @@ nav.fixed + * {
   color: var(--text-color);
 }
 
-html[lang='ar'] .logo-text {
-  margin-left: 0;
-  margin-right: 10px;
-}
 
 .nav-links {
   position: absolute;
@@ -246,6 +242,15 @@ html[lang='en'] .nav-links a {
   .nav-links li {
     opacity: 1;
   }
+
+  html[lang='ar'] nav .nav-links {
+    direction: rtl;
+  }
+
+  html[lang='ar'] .logo-text {
+    margin-left: 0;
+    margin-right: 10px;
+  }
 }
 @media screen and (min-width: $lg-brakepoint) {
   .nav-links {
@@ -264,9 +269,6 @@ html[lang='en'] .nav-links a {
   }
 }
 
-html[lang='ar'] nav {
-  direction: rtl;
-}
 
 .burger-toggle .line1 {
   transform: rotate(-45deg) translate(-5px, 6px);
