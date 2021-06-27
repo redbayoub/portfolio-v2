@@ -1,20 +1,20 @@
 <template>
-  <section class="container project-detail">
+  <div class="container project-detail">
     <div class="col">
-      <h3 class="title"><slot name="title"></slot></h3>
       <div class="line" :style="{ 'background-color': color }"></div>
+      <h3 class="title"><slot name="title"></slot></h3>
     </div>
     <div class="col description">
       <slot name="description"></slot>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "project-detail",
-  props: ["color"],
-};
+  name: 'project-detail',
+  props: ['color'],
+}
 </script>
 
 <style lang="scss">
@@ -26,9 +26,11 @@ export default {
 
   .line {
     height: 4px;
-    width: 100px;
+    width: 50px;
     background-color: rgb(70, 70, 70);
-    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-top: -5px;
+    border-radius: 8px;
   }
 
   .description {
