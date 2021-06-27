@@ -1,8 +1,8 @@
 <template>
   <div>
-        <div class="overlay"></div>
+    <div class="overlay"></div>
     <NavBar id="navbar" />
-    
+
     <Hero id="home" class="scrollable" ref="hero" />
     <Work id="work" class="scrollable" ref="work" :allProjects="all_projects" />
     <Skills id="skills" class="scrollable" ref="skills" />
@@ -121,6 +121,7 @@ export default {
         eventAction: getMaxScrollDepth().toString(),
       })
     })
+    localStorage.setItem('opened_before', true)
   },
 }
 </script>

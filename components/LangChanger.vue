@@ -30,7 +30,6 @@ export default {
   methods: {
     changeLang() {
       this.trackChangeLanguage(this.new_lang)
-      console.log(this.switchLocalePath(this.new_lang))
       location.replace(this.switchLocalePath(this.new_lang))
     },
     trackChangeLanguage(lang) {

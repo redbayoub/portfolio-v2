@@ -9,7 +9,7 @@
       >
       <ul class="nav-links" v-if="!empty" :class="{ 'nav-active': navOpen }">
         <li class="active">
-          <a href="#home" @click="(e)=>smoothScrollToElement(e,0)">{{
+          <a href="#home" @click="(e) => smoothScrollToElement(e, 0)">{{
             $t('home.label')
           }}</a>
         </li>
@@ -56,7 +56,7 @@
 import Logo from '@/components/Logo'
 import SvgIcon from '@/components/SvgPathIcon'
 import LangChanger from '@/components/LangChanger'
-import { smoothScrollToElement, toggleScroll } from '@/plugins/utils'
+import { smoothScrollToElement, toggleScroll, isMobile } from '@/plugins/utils'
 export default {
   name: 'navBar',
   components: {
@@ -79,7 +79,13 @@ export default {
       navOpen: false,
     }
   },
-
+  mounted() {
+    if (
+      isMobile() &&
+      localStorage.getItem('opened_before') == null
+    )
+      this.onBurgerClicked()
+  },
   methods: {
     smoothScrollToElement,
     toggleScroll,
@@ -149,7 +155,6 @@ nav.fixed + * {
   margin-left: 10px;
   color: var(--text-color);
 }
-
 
 .nav-links {
   position: absolute;
@@ -268,7 +273,6 @@ html[lang='en'] .nav-links a {
     transform: translateX(0px);
   }
 }
-
 
 .burger-toggle .line1 {
   transform: rotate(-45deg) translate(-5px, 6px);
