@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import { changeLocale } from '@/plugins/utils'
 export default {
   name: 'langChanger',
 
