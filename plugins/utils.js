@@ -69,15 +69,14 @@ export const getColorValues = (color) => {
  * Scroll to the desired element without adding the hash to the url
  * @param {Event} e
  */
-export const smoothScrollToElement = (e) => {
+export const smoothScrollToElement = (e,yOffset=-20) => {
   e.preventDefault()
   const elementId = e.target.hash.substring(1)
   const el = document.getElementById(elementId)
   if (!el) return
-  el.scrollIntoView({
-    block: 'start',
-    behaviour: 'smooth',
-  })
+
+  const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  window.scrollTo({top: y, behavior: 'smooth'});
 }
 
 /**

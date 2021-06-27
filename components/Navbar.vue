@@ -9,7 +9,7 @@
       >
       <ul class="nav-links" v-if="!empty" :class="{ 'nav-active': navOpen }">
         <li class="active">
-          <a href="#home" @click="smoothScrollToElement">{{
+          <a href="#home" @click="(e)=>smoothScrollToElement(e,0)">{{
             $t('home.label')
           }}</a>
         </li>
