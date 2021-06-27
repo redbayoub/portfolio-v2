@@ -41,7 +41,7 @@
     "lead": "Back-end & Mobile apps software developer",
     "title": "Bring the BEST of the world to your fingertips",
     "cta": {
-      "explore": "Explore",
+      "explore": "Explore my projects",
       "contact": "Let's talk",
       "learn_more": "Learn More",
       "source_code": "Source Code",
@@ -60,7 +60,8 @@
     "title": "Latest Projects",
     "cta": {
       "show_more": "show more",
-      "more_projects_on": "More projects available on"
+      "more_projects_on": "More projects available on",
+      "learn_more": "Learn More"
     }
   },
   "alert": {
