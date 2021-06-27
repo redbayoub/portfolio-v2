@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <section class="container">
+    <div class="container">
       <h1 class="section-title">{{ $t('contact.title') }}</h1>
       <div class="section-content">
         <div class="section-details">
@@ -135,7 +135,7 @@
           </form>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
@@ -283,6 +283,7 @@ export default {
 <style lang="scss">
 .contact {
   background-color: #3f3f3f;
+  padding: 2em 0;
 }
 
 html[lang='ar'] .contact {

@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss">
 .project-detail {
+  padding: 0 0 2em;
   .title {
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -39,7 +40,7 @@ export default {
   }
 }
 
-html[lang="ar"] .project-detail {
+html[lang='ar'] .project-detail {
   direction: rtl;
   .title {
     letter-spacing: 0px;

@@ -1,62 +1,66 @@
 <template>
   <div v-if="project">
     <NavBar id="navbar" :empty="true" :fixed="false" />
+    <div class="container">
+      <ProjectHero :project="project" style="padding-bottom:2em;" />
+      <client-only>
+        <vue-easy-lightbox
+          :moveDisabled="true"
+          :visible="showImageModal"
+          :imgs="project.screenshots"
+          :index="selectedImageIndex"
+          @hide="handleHide"
+        />
+      </client-only>
 
-    <ProjectHero :project="project" />
-    <client-only>
-      <vue-easy-lightbox
-        :moveDisabled="true"
-        :visible="showImageModal"
-        :imgs="project.screenshots"
-        :index="selectedImageIndex"
-        @hide="handleHide"
-      />
-    </client-only>
+      <ProjectDetail id="description" :color="project.primary_color">
+        <template v-slot:title>
+          {{ $t('project_details.description') }}
+        </template>
+        <template v-slot:description>
+          {{ project.custom_description[$i18n.locale] }}
+        </template>
+      </ProjectDetail>
 
-    <ProjectDetail id="description" :color="project.primary_color">
-      <template v-slot:title>
-        {{ $t('project_details.description') }}
-      </template>
-      <template v-slot:description>
-        {{ project.custom_description[$i18n.locale] }}
-      </template>
-    </ProjectDetail>
+      <ProjectDetail :color="project.primary_color">
+        <template v-slot:title> {{ $t('project_details.role') }} </template>
+        <template v-slot:description>
+          {{ project.role[$i18n.locale] }}
+        </template>
+      </ProjectDetail>
 
-    <ProjectDetail :color="project.primary_color">
-      <template v-slot:title> {{ $t('project_details.role') }} </template>
-      <template v-slot:description> {{ project.role[$i18n.locale] }} </template>
-    </ProjectDetail>
+      <ProjectDetail :color="project.primary_color">
+        <template v-slot:title>
+          {{ $t('project_details.technologies') }}
+        </template>
+        <template v-slot:description>
+          <div class="chips">
+            <Chip v-for="(stack, index) in project.stacks" :key="index">{{
+              stack
+            }}</Chip>
+          </div>
+        </template>
+      </ProjectDetail>
 
-    <ProjectDetail :color="project.primary_color">
-      <template v-slot:title>
-        {{ $t('project_details.technologies') }}
-      </template>
-      <template v-slot:description>
-        <div class="chips">
-          <Chip v-for="(stack, index) in project.stacks" :key="index">{{
-            stack
-          }}</Chip>
-        </div>
-      </template>
-    </ProjectDetail>
+      <ProjectDetail :color="project.primary_color">
+        <template v-slot:title>
+          {{ $t('project_details.screenshots') }}
+        </template>
+        <template v-slot:description>
+          <div class="project-screenshots-list no-select" ref="hScroll">
+            <img
+              :key="index"
+              v-for="(url, index) in project.screenshots"
+              :src="url"
+              class="img-responsive rounded"
+              :alt="project.custom_title.en + ' screenshot ' + index"
+              @click.prevent="onImageClicked(index)"
+            />
+          </div>
+        </template>
+      </ProjectDetail>
+    </div>
 
-    <ProjectDetail :color="project.primary_color">
-      <template v-slot:title>
-        {{ $t('project_details.screenshots') }}
-      </template>
-      <template v-slot:description>
-        <div class="project-screenshots-list no-select" ref="hScroll">
-          <img
-            :key="index"
-            v-for="(url, index) in project.screenshots"
-            :src="url"
-            class="img-responsive rounded"
-            :alt="project.custom_title.en + ' screenshot ' + index"
-            @click.prevent="onImageClicked(index)"
-          />
-        </div>
-      </template>
-    </ProjectDetail>
     <Contact />
     <MyFooter />
   </div>
